@@ -1,4 +1,4 @@
-If you're a student , I am assuming that you're using latex to write down your reports 
+If you're a student , I am assuming that you're using latex to write  your reports 
 so in this page we going to guide you to effectively manipulate and write in latex smoothly to quickly start your documenting journey 
 
 **This is more of a conceptual cheatsheet** : where we introduce a concept in LaTex and some basic examples of it , anything syntax specific you can find in cheatsheets and documenation anywhere or you can generate it using AI or something. 
@@ -151,11 +151,13 @@ it is the area between `\documentclass[<options>]{<class>}` and `\begin{document
     \usepackage{graphicx}   % for images 
     \usepackage{amsmath}    % for advanced math
     ```
+
 - **Set options** → Adjust global document settings, such as page layout or font.
 ```latex
     \setlength{\parindent}{0pt}  % remove paragraph indentation
     \setlength{\parskip}{1em}    % add space between paragraphs
-    ```
+```
+
 - **Define macros** → Create shortcuts for repeated commands.
   ```latex
     \newcommand{\name}[num]{definition}
@@ -166,6 +168,7 @@ it is the area between `\documentclass[<options>]{<class>}` and `\begin{document
     % - Example:
     \newcommand{\R}{\mathbb{R}}  % shortcut for the set of real numbers
     ```
+
 - **Redefine existing commands** → Modify the behavior of commands already defined by LaTeX or packages.
     ```LATEX
     
