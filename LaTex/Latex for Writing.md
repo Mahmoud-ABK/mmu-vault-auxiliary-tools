@@ -144,6 +144,8 @@ they include :
 - **Columns** → `onecolumn`, `twocolumn`
 - **Equation formatting** → `fleqn` (left-align equations), `leqno` (numbers on left)
 - etc...
+
+
 ### **2.2 the preamble** 
 it is the area between `\documentclass[<options>]{<class>}` and `\begin{document}` in which we can 
 - **Import packages** → Add extra functionality (e.g., graphics, tables, math).
