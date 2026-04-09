@@ -1,4 +1,4 @@
-well, this won't be a comprehensive thing , it is just a small intro to get started more like syntax oriented 
+well, this won't be a comprehensive thing , it is just a small intro to get started more like syntax oriented , good to know for proper debugging
 
 
 > [! a small note]

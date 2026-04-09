@@ -2,7 +2,7 @@ _An overview of the ecosystem, terminology, and fundamental ideas._
 
 # WYSIWG approach and the need for alternatives 
 
-You might know **WYSIWYG**—it stands for **What You See Is What You Get**.
+You might know **WYSIWYG** ,it stands for **What You See Is What You Get**.
 
 You can think of programs like Microsoft Office, Google Docs, or LibreOffice.
 

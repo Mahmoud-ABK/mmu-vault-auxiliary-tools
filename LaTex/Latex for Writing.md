@@ -13,7 +13,12 @@ and the book that I couldn't stop referencing
 
 sooo let's start ,
 
-**Choose whatever tool you want but make sure you configure it right!**
+**Choose whatever tool you want but make sure you configure it right!** 
+
+> [!info]
+> - **overleaf** is a personal recommendation to get started quicky but its cloud-based.
+> - If you want a more granular control and privacy , I recommend using **TexStudio** or just your preferred **Text editor**  (Vs code , neovim etc...) and compile manually , even if it required more manual configuration but it's worth the effort. 
+
 
 
 # Generic syntax of LaTex and Glossary
@@ -149,51 +154,53 @@ they include :
 ### **2.2 the preamble** 
 it is the area between `\documentclass[<options>]{<class>}` and `\begin{document}` in which we can 
 - **Import packages** → Add extra functionality (e.g., graphics, tables, math).
-   ```latex
-    \usepackage{graphicx}   % for images 
-    \usepackage{amsmath}    % for advanced math
-    ```
+
+```latex
+\usepackage{graphicx}   % for images 
+\usepackage{amsmath}    % for advanced math
+```
+
 
 - **Set options** → Adjust global document settings, such as page layout or font.
 ```latex
-    \setlength{\parindent}{0pt}  % remove paragraph indentation
-    \setlength{\parskip}{1em}    % add space between paragraphs
+\setlength{\parindent}{0pt}  % remove paragraph indentation
+\setlength{\parskip}{1em}    % add space between paragraphs
 ```
 
 - **Define macros** → Create shortcuts for repeated commands.
-  ```latex
-    \newcommand{\name}[num]{definition}
-	% - \name : new command name
-	% - [num] : optional, number of arguments (1-9)
-	% - definition : what the command does
-    
-    % - Example:
-    \newcommand{\R}{\mathbb{R}}  % shortcut for the set of real numbers
-    ```
+```latex
+\newcommand{\name}[num]{definition}
+% - \name : new command name
+% - [num] : optional, number of arguments (1-9)
+% - definition : what the command does
+
+% - Example:
+\newcommand{\R}{\mathbb{R}}  % shortcut for the set of real numbers
+```
 
 - **Redefine existing commands** → Modify the behavior of commands already defined by LaTeX or packages.
-    ```LATEX
-    
-    \renewcommand{\name}[num]{new definition}
-	% - modifies an already defined command
-	
-	% - Examples:
-    \renewcommand{\thesection}{\Roman{section}} % sections numbered with Roman numerals 
-    \renewcommand{\familydefault}{\sfdefault}  % change default font to sans-serif
-    ```
+```LATEX
+
+\renewcommand{\name}[num]{new definition}
+% - modifies an already defined command
+
+% - Examples:
+\renewcommand{\thesection}{\Roman{section}} % sections numbered with Roman numerals 
+\renewcommand{\familydefault}{\sfdefault}  % change default font to sans-serif
+```
 
 ### **2.3 the Document Metadata**
 you may find this called like this or sometimes it is called topmatter or Title block or whatsoever 
 it usually covers 
 - **Title** → `\title{Document Title}`
-    - Optional line break: `\title{Document Title\\A Subtitle}`
+- Optional line break: `\title{Document Title\\A Subtitle}`
 - **Author** → `\author{John Doe}`
-    - Multiple authors: `\author{John Doe \and Jane Smith}`
-    - With affiliations: `\author{John Doe\thanks{University A} \and Jane Smith\thanks{Institute B}}`
+- Multiple authors: `\author{John Doe \and Jane Smith}`
+- With affiliations: `\author{John Doe\thanks{University A} \and Jane Smith\thanks{Institute B}}`
 - **Date** →
-    - Today’s date: `\date{\today}`
-    - Custom date: `\date{September 10, 2025}`
-    - No date: `\date{}`
+- Today’s date: `\date{\today}`
+- Custom date: `\date{September 10, 2025}`
+- No date: `\date{}`
 - **Subtitle / extra info** → (requires package like `titling`) `\subtitle{A Conceptual Cheatsheet for Students}`
 
 ### **2.4 the Body**
@@ -297,21 +304,21 @@ LaTeX automatically numbers sections, figures, tables, and equations.
 ## **6. How to Handle Figures**  
 ```latex
 \begin{figure}[<position>!]
-    \centering 
-    \includegraphics[width=0.5\textwidth]{<filepath>}
-    \caption{Caption text}
-    \label{fig:<label>}
+\centering 
+\includegraphics[width=0.5\textwidth]{<filepath>}
+\caption{Caption text}
+\label{fig:<label>}
 \end{figure}
 ```
 
 ### Explanation
 
 - `<position>` options:
-    - `h` → here
-    - `t` → top of page
-    - `b` → bottom of page
-    - `p` → page of floats
-    - `!` → override internal constraints
+- `h` → here
+- `t` → top of page
+- `b` → bottom of page
+- `p` → page of floats
+- `!` → override internal constraints
 - `<filepath>` → your image file name (with or without extension)
 - `\centering` → centers the figure
 - `\caption{}` → adds a caption
@@ -325,16 +332,16 @@ LaTeX automatically collects captions from all figures with `\caption{}`
 
 ```latex
 \begin{table}[<position>!]
-    \centering
-    \begin{tabular}{|c|c|c|}
-        \hline
-        Header1 & Header2 & Header3 \\
-        \hline
-        Data1 & Data2 & Data3 \\
-        \hline
-    \end{tabular}
-    \caption{Caption text}
-    \label{tab:<label>}
+\centering
+\begin{tabular}{|c|c|c|}
+	\hline
+	Header1 & Header2 & Header3 \\
+	\hline
+	Data1 & Data2 & Data3 \\
+	\hline
+\end{tabular}
+\caption{Caption text}
+\label{tab:<label>}
 \end{table}
 ```
 
@@ -391,25 +398,25 @@ A **bibliography** is a list of sources (books, articles, websites, etc.) refere
 the [wikibooks](https://en.wikibooks.org/wiki/LaTeX/Modular_Documents) discusses this sparingly , but here is a quick "just enough"
 ### `\include` vs `\input`  
 - **`\input{file}`**:  
-  - Simply inserts the contents of `file.tex` at the location of the command.  
-  - No extra page breaks.  
-  - Useful for small snippets or logically splitting sections.  
-  - **Supports nesting:** an input file can itself `\input` other files.  
+- Simply inserts the contents of `file.tex` at the location of the command.  
+- No extra page breaks.  
+- Useful for small snippets or logically splitting sections.  
+- **Supports nesting:** an input file can itself `\input` other files.  
 
 - **`\include{file}`**:  
-  - Inserts the contents of `file.tex` **and creates its own `.aux` file**.  
-  - Automatically adds a page break before the included file.  
-  - Useful for large documents (chapters, appendices).  
-  - **Supports nesting** only at **one level**: included files **cannot themselves include other files** using `\include`. Nested inclusion must use `\input` inside the included file.  
+- Inserts the contents of `file.tex` **and creates its own `.aux` file**.  
+- Automatically adds a page break before the included file.  
+- Useful for large documents (chapters, appendices).  
+- **Supports nesting** only at **one level**: included files **cannot themselves include other files** using `\include`. Nested inclusion must use `\input` inside the included file.  
 
 - **`\includeonly{file1,file2}`**:  
-  - Compile only the listed `\include` files while skipping the rest.  
-  - Speeds up compilation for large projects.  
-  - `.aux` files of skipped files are still read, so references and numbering stay correct.  
+- Compile only the listed `\include` files while skipping the rest.  
+- Speeds up compilation for large projects.  
+- `.aux` files of skipped files are still read, so references and numbering stay correct.  
 
 - **Other libraries / packages for including content**:  
-  - `standalone`: for including separate LaTeX files, figures, or TikZ pictures as standalone content.  
-  - `subfiles`: allows each subfile to be compiled independently **and** as part of the main document, supporting fully nested documents.  
+- `standalone`: for including separate LaTeX files, figures, or TikZ pictures as standalone content.  
+- `subfiles`: allows each subfile to be compiled independently **and** as part of the main document, supporting fully nested documents.  
 
 ### How Does LaTeX Put Things Together Later?  
 - During compilation, LaTeX **reads the main file** and recursively pulls in `\input`/`\include` files.  
