@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><title>Latex for Writing</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="Quartz 4"/><meta property="og:title" content="Latex for Writing"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Latex for Writing"/><meta name="twitter:description" content="If you’re a student , I am assuming that you’re using latex to write your reports so in this page we going to guide you to effectively manipulate and write in latex smoothly to quickly start your documenting journey This is more of a conceptual cheatsheet : where we introduce a concept in LaTex and ..."/><meta property="og:description" content="If you’re a student , I am assuming that you’re using latex to write your reports so in this page we going to guide you to effectively manipulate and write in latex smoothly to quickly start your documenting journey This is more of a conceptual cheatsheet : where we introduce a concept in LaTex and ..."/><meta property="og:image:alt" content="If you’re a student , I am assuming that you’re using latex to write your reports so in this page we going to guide you to effectively manipulate and write in latex smoothly to quickly start your documenting journey This is more of a conceptual cheatsheet : where we introduce a concept in LaTex and ..."/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https://quartz.jzhao.xyz/LaTex/Latex-for-Writing"/><meta property="twitter:url" content="https://quartz.jzhao.xyz/LaTex/Latex-for-Writing"/><link rel="icon" href="../static/icon.png"/><meta name="description" content="If you’re a student , I am assuming that you’re using latex to write your reports so in this page we going to guide you to effectively manipulate and write in latex smoothly to quickly start your documenting journey This is more of a conceptual cheatsheet : where we introduce a concept in LaTex and ..."/><meta name="generator" content="Quartz"/><link href="../index.css" rel="stylesheet" type="text/css" data-persist="true"/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiL2hvbWUvbWFobW91ZC9vYnNpZGlhbi9zY3JpcHRzL3F1YXJ0ei9xdWFydHovY29tcG9uZW50cy9zdHlsZXMiLCJzb3VyY2VzIjpbIm1lcm1haWQuaW5saW5lLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTtFQUNBOztBQUdGO0VBQ0U7OztBQUtGO0VBQ0U7RUFDQTs7O0FBSUo7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7O0FBR0Y7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTtFQUNBOztBQUlKO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTs7QUFHRjtFQUNFOztBQUlGO0VBQ0U7RUFDQTtFQUNBIiwic291cmNlc0NvbnRlbnQiOlsiLmV4cGFuZC1idXR0b24ge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsb2F0OiByaWdodDtcbiAgcGFkZGluZzogMC40cmVtO1xuICBtYXJnaW46IDAuM3JlbTtcbiAgcmlnaHQ6IDA7IC8vIE5PVEU6IHJpZ2h0IHdpbGwgYmUgc2V0IGluIG1lcm1haWQuaW5saW5lLnRzXG4gIGNvbG9yOiB2YXIoLS1ncmF5KTtcbiAgYm9yZGVyLWNvbG9yOiB2YXIoLS1kYXJrKTtcbiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tbGlnaHQpO1xuICBib3JkZXI6IDFweCBzb2xpZDtcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xuICBvcGFjaXR5OiAwO1xuICB0cmFuc2l0aW9uOiAwLjJzO1xuXG4gICYgPiBzdmcge1xuICAgIGZpbGw6IHZhcigtLWxpZ2h0KTtcbiAgICBmaWx0ZXI6IGNvbnRyYXN0KDAuMyk7XG4gIH1cblxuICAmOmhvdmVyIHtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgYm9yZGVyLWNvbG9yOiB2YXIoLS1zZWNvbmRhcnkpO1xuICB9XG5cbiAgJjpmb2N1cyB7XG4gICAgb3V0bGluZTogMDtcbiAgfVxufVxuXG5wcmUge1xuICAmOmhvdmVyID4gLmV4cGFuZC1idXR0b24ge1xuICAgIG9wYWNpdHk6IDE7XG4gICAgdHJhbnNpdGlvbjogMC4ycztcbiAgfVxufVxuXG4jbWVybWFpZC1jb250YWluZXIge1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIGNvbnRhaW46IGxheW91dDtcbiAgei1pbmRleDogOTk5O1xuICBsZWZ0OiAwO1xuICB0b3A6IDA7XG4gIHdpZHRoOiAxMDB2dztcbiAgaGVpZ2h0OiAxMDB2aDtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgZGlzcGxheTogbm9uZTtcbiAgYmFja2Ryb3AtZmlsdGVyOiBibHVyKDRweCk7XG4gIGJhY2tncm91bmQ6IHJnYmEoMCwgMCwgMCwgMC41KTtcblxuICAmLmFjdGl2ZSB7XG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICB9XG5cbiAgJiA+ICNtZXJtYWlkLXNwYWNlIHtcbiAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWxpZ2h0KTtcbiAgICBib3JkZXItcmFkaXVzOiA1cHg7XG4gICAgcG9zaXRpb246IGZpeGVkO1xuICAgIHRvcDogNTAlO1xuICAgIGxlZnQ6IDUwJTtcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcbiAgICBoZWlnaHQ6IDgwdmg7XG4gICAgd2lkdGg6IDgwdnc7XG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcblxuICAgICYgPiAubWVybWFpZC1jb250ZW50IHtcbiAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICAgIHRyYW5zZm9ybS1vcmlnaW46IDAgMDtcbiAgICAgIHRyYW5zaXRpb246IHRyYW5zZm9ybSAwLjFzIGVhc2U7XG4gICAgICBvdmVyZmxvdzogdmlzaWJsZTtcbiAgICAgIG1pbi1oZWlnaHQ6IDIwMHB4O1xuICAgICAgbWluLXdpZHRoOiAyMDBweDtcblxuICAgICAgcHJlIHtcbiAgICAgICAgbWFyZ2luOiAwO1xuICAgICAgICBib3JkZXI6IG5vbmU7XG4gICAgICB9XG5cbiAgICAgIHN2ZyB7XG4gICAgICAgIG1heC13aWR0aDogbm9uZTtcbiAgICAgICAgaGVpZ2h0OiBhdXRvO1xuICAgICAgfVxuICAgIH1cblxuICAgICYgPiAubWVybWFpZC1jb250cm9scyB7XG4gICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgICBib3R0b206IDIwcHg7XG4gICAgICByaWdodDogMjBweDtcbiAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICBnYXA6IDhweDtcbiAgICAgIHBhZGRpbmc6IDhweDtcbiAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0KTtcbiAgICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICBib3JkZXItcmFkaXVzOiA2cHg7XG4gICAgICBib3gtc2hhZG93OiAwIDJweCA0cHggcmdiYSgwLCAwLCAwLCAwLjEpO1xuICAgICAgei1pbmRleDogMjtcblxuICAgICAgLm1lcm1haWQtY29udHJvbC1idXR0b24ge1xuICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgICAgICAgd2lkdGg6IDMycHg7XG4gICAgICAgIGhlaWdodDogMzJweDtcbiAgICAgICAgcGFkZGluZzogMDtcbiAgICAgICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tbGlnaHRncmF5KTtcbiAgICAgICAgYmFja2dyb3VuZDogdmFyKC0tbGlnaHQpO1xuICAgICAgICBjb2xvcjogdmFyKC0tZGFyayk7XG4gICAgICAgIGJvcmRlci1yYWRpdXM6IDRweDtcbiAgICAgICAgY3Vyc29yOiBwb2ludGVyO1xuICAgICAgICBmb250LXNpemU6IDE2cHg7XG4gICAgICAgIGZvbnQtZmFtaWx5OiB2YXIoLS1ib2R5Rm9udCk7XG4gICAgICAgIHRyYW5zaXRpb246IGFsbCAwLjJzIGVhc2U7XG5cbiAgICAgICAgJjpob3ZlciB7XG4gICAgICAgICAgYmFja2dyb3VuZDogdmFyKC0tbGlnaHRncmF5KTtcbiAgICAgICAgfVxuXG4gICAgICAgICY6YWN0aXZlIHtcbiAgICAgICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMXB4KTtcbiAgICAgICAgfVxuXG4gICAgICAgIC8vIFN0eWxlIHRoZSByZXNldCBidXR0b24gZGlmZmVyZW50bHlcbiAgICAgICAgJjpudGgtY2hpbGQoMikge1xuICAgICAgICAgIHdpZHRoOiBhdXRvO1xuICAgICAgICAgIHBhZGRpbmc6IDAgMTJweDtcbiAgICAgICAgICBmb250LXNpemU6IDE0cHg7XG4gICAgICAgIH1cbiAgICAgIH1cbiAgICB9XG4gIH1cbn1cbiJdfQ== */</style><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../prescript.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../static/contentIndex.json").then(data => data.json())</script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://quartz.jzhao.xyz/index.xml"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://quartz.jzhao.xyz/LaTex/Latex-for-Writing-og-image.webp"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/LaTex/Latex-for-Writing-og-image.webp"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/LaTex/Latex-for-Writing-og-image.webp"/><meta property="og:image:type" content="image/.webp"/></head><body data-slug="LaTex/Latex-for-Writing"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="..">Quartz 4</a></h2><div class="spacer mobile-only"></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 1rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Search</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div class="search-layout" data-preview="true"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Reader mode"><title>Reader mode</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a,b)=>!a.isFolder&amp;&amp;!b.isFolder||a.isFolder&amp;&amp;b.isFolder?a.displayName.localeCompare(b.displayName,void 0,{numeric:!0,sensitivity:\&quot;base\&quot;}):!a.isFolder&amp;&amp;b.isFolder?1:-1&quot;,&quot;filterFn&quot;:&quot;node=>node.slugSegment!==\&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;node=>node&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-4" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#"></a></li></template><template id="template-folder"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../LaTex/">LaTex</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Latex for Writing</a></div></nav><h1 class="article-title">Latex for Writing</h1><p show-comma="true" class="content-meta"><time datetime="2026-05-16T21:23:53.000Z">May 16, 2026</time><span>11 min read</span></p></div></div><article class="popover-hint"><p>If you’re a student , I am assuming that you’re using latex to write  your reports
+so in this page we going to guide you to effectively manipulate and write in latex smoothly to quickly start your documenting journey</p>
+<p><strong>This is more of a conceptual cheatsheet</strong> : where we introduce a concept in LaTex and some basic examples of it , anything syntax specific you can find in cheatsheets and documenation anywhere or you can generate it using AI or something.</p>
+<p><strong>what is important that you have LaTex organised in your mind to can manipulate existent template or make your own.</strong></p>
+<p>here is a very quick and good cheatsheet that you can follow along with this content
+<a href="https://wch.github.io/latexsheet/latexsheet.pdf" class="external">Latexsheet<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>
+I’ll re-reference this cheatsheet when needed , so no redundancy
+and the book that I couldn’t stop referencing
+<a href="https://tobi.oetiker.ch/lshort/lshort.pdf" class="external">The Not So Short Introduction to LATEX<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<p>sooo let’s start ,</p>
+<p><strong>Choose whatever tool you want but make sure you configure it right!</strong></p>
+<blockquote class="callout info" data-callout="info">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>Info</p></div>
+                  
+                </div>
+<div class="callout-content">
+<ul>
+<li><strong>overleaf</strong> is a personal recommendation to get started quicky but its cloud-based.</li>
+<li>If you want a more granular control and privacy , I recommend using <strong>TexStudio</strong> or just your preferred <strong>Text editor</strong>  (Vs code , neovim etc…) and compile manually , even if it required more manual configuration but it’s worth the effort.</li>
+</ul>
+</div>
+</blockquote>
+<h1 id="generic-syntax-of-latex-and-glossary">Generic syntax of LaTex and Glossary<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#generic-syntax-of-latex-and-glossary" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<h2 id="1-basic-syntax-principles"><strong>1. Basic Syntax Principles</strong><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#1-basic-syntax-principles" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="11-commands"><strong>1.1 Commands</strong><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#11-commands" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>A <strong>command</strong> is a single instruction that tells LaTeX to do something.</li>
+<li><strong>Syntax:</strong> Starts with a backslash <code>\commandname</code>.</li>
+<li><strong>Arguments:</strong>
+<ul>
+<li><strong>Mandatory arguments:</strong> enclosed in <code>{}</code></li>
+<li><strong>Optional arguments:</strong> enclosed in <code>[]</code></li>
+</ul>
+</li>
+</ul>
+<p><strong>Example:</strong></p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="latex" data-theme="github-light github-dark"><code data-language="latex" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\section</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">Introduction</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">}        </span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">% mandatory argument </span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">\documentclass</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">[12pt]{</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">article</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">} </span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">% optional + mandatory</span></span></code></pre></figure>
+<p><strong>Scope of commands:</strong></p>
+<ul>
+<li>Commands can either <strong>affect only the content they wrap</strong> (like <code>\textbf{}</code>) or <strong>declare a change for the current scope</strong> (like <code>\bfseries</code>).</li>
+<li>If a command is a <strong>declaration</strong>, it continues to affect everything <strong>until the scope ends</strong> (end of group, environment, or document).</li>
+</ul>
+<hr/>
+<h3 id="12-environments"><strong>1.2 Environments</strong><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#12-environments" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>An <strong>environment</strong> is a block of content surrounded by <code>\begin{envname}</code> and <code>\end{envname}</code>.</li>
+<li>Everything inside an environment is <strong>affected by that environment</strong>.</li>
+<li>Environments can also define <strong>scopes</strong>: local changes inside an environment usually do not affect content outside.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="latex" data-theme="github-light github-dark"><code data-language="latex" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\begin</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{itemize}    </span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">	\item</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> First item</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">	\item</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> Second item </span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\end</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{itemize}</span></span></code></pre></figure>
+<p><strong>Scope of environments:</strong></p>
+<ul>
+<li>Any formatting, counters, or other effects inside an environment are <strong>limited to that environment</strong>, unless explicitly declared globally.</li>
+</ul>
+<hr/>
+<h3 id="13-comments"><strong>1.3 Comments</strong><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#13-comments" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>Start a line with <code>%</code>.</li>
+<li>Everything after <code>%</code> on the same line is ignored by LaTeX.
+<strong>Example:</strong>
+<code>% This is a comment</code></li>
+</ul>
+<hr/>
+<h3 id="14-groups-and-scopes"><strong>1.4 Groups and Scopes</strong><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#14-groups-and-scopes" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>Groups</strong> are created with <code>{ ... }</code> and define a <strong>local scope</strong> for commands and declarations.</li>
+<li>Any formatting, counter changes, or settings inside a group <strong>only affect content within that group</strong>. Once the group ends, the previous settings are restored.</li>
+<li>Groups , ofc, used also to group items together to be treated as one
+<strong>Example : Temporary bold text</strong>
+<code>{\bfseries Bold text only in this group} Normal text here</code>
+<ul>
+<li><code>\bfseries</code> affects only the text inside the braces <code>{}</code>.</li>
+<li>After the group ends, the font returns to normal.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Nested groups</strong></p>
+<ul>
+<li>Inner group <code>{ ... }</code> overrides the outer group temporarily.</li>
+<li>After the inner group ends, the outer group’s formatting resumes.</li>
+<li>After the outer group ends, formatting returns to normal.</li>
+</ul>
+<p><strong>Scope takeaway:</strong></p>
+<ul>
+<li>Commands can have <strong>local effect</strong> (inside a group or environment) or <strong>global effect</strong> (if no group or explicitly made global).</li>
+<li>Groups and environments are tools to <strong>control the scope</strong> of commands and formatting.</li>
+</ul>
+<p><strong>The Tex primitive</strong>
+<code>\begingroup … \endgroup</code> can work like <code>{}</code> , it is robust for complex content</p>
+<h3 id="15-special-characters"><strong>1.5 Special Characters</strong><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#15-special-characters" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>these are the special characters that are <strong>Reserved</strong> , they may break your code if you don’t handle them properly</p>
+<p># $ % ^ &amp; _ { } ~ \</p>
+<p>here is how to effectively write them in latex (respectively)</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="latex" data-theme="github-light github-dark"><code data-language="latex" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\#</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> \$</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> \%</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> \^</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{} </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\&amp;</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> \_</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> \{</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> \}</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> \~</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{} </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\textbackslash</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{}</span></span></code></pre></figure>
+<h2 id="2-global-document-structure"><strong>2. Global document structure</strong><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#2-global-document-structure" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="LATEX" data-theme="github-light github-dark"><code data-language="LATEX" data-theme="github-light github-dark" style="display:grid;"><span data-line><span>\documentclass[&lt;options>]{&lt;class>}</span></span>
+<span data-line><span>\usepackage{&lt;package>} </span></span>
+<span data-line><span>\begin{document} </span></span>
+<span data-line><span>SOME CONTENT....</span></span>
+<span data-line><span>\end{document}</span></span></code></pre></figure>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="latex" data-theme="github-light github-dark"><code data-language="latex" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">\documentclass</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">[&lt;options>]{</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">&lt;class></span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">}</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\author</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{Author Name} </span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\title</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{your Title} </span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\begin</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{document} </span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">	\maketitle</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> </span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">	\tableofcontents</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> </span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">	\section</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">Section Title</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">} Section Content</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">	\section</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">Second Section Title </span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">} Some other content</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">	</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">	\ldots</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{} and here it ends. </span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\end</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{document}</span></span></code></pre></figure>
+<p><strong>Here is the output if we chose &lt;class> to be article</strong></p>
+<p><img src="../LaTex/assets/basic-output.png" width="auto" height="auto" alt/></p>
+<p><strong>Let’s break this down</strong></p>
+<h3 id="21-the-document-class"><strong>2.1 the Document class</strong><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#21-the-document-class" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="class-">class ?<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#class-" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>specifies what sort of document you intend to write
+<img src="../LaTex/assets/document-class.png" width="auto" height="auto" alt/></p>
+<p>**source : The Not So Short Introduction to LATEX : <a href="https://tobi.oetiker.ch/lshort/lshort.pdf" class="external">link<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>· **</p>
+<h4 id="options-">options ?<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#options-" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>the whole [options] is optional
+they define <strong>the general appearance and structure</strong> of your document
+they include :</p>
+<ul>
+<li><strong>Font size</strong> → <code>10pt</code>, <code>11pt</code>, <code>12pt</code></li>
+<li><strong>Paper size</strong> → <code>a4paper</code>, <code>letterpaper</code>, <code>legalpaper</code></li>
+<li><strong>Page layout</strong> → <code>oneside</code>, <code>twoside</code>, <code>landscape</code></li>
+<li><strong>Columns</strong> → <code>onecolumn</code>, <code>twocolumn</code></li>
+<li><strong>Equation formatting</strong> → <code>fleqn</code> (left-align equations), <code>leqno</code> (numbers on left)</li>
+<li>etc…</li>
+</ul>
+<h3 id="22-the-preamble"><strong>2.2 the preamble</strong><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#22-the-preamble" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>it is the area between <code>\documentclass[&lt;options>]{&lt;class>}</code> and <code>\begin{document}</code> in which we can</p>
+<ul>
+<li><strong>Import packages</strong> → Add extra functionality (e.g., graphics, tables, math).</li>
+</ul>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="latex" data-theme="github-light github-dark"><code data-language="latex" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">\usepackage</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">graphicx</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">}   </span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">% for images </span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">\usepackage</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">amsmath</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">}    </span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">% for advanced math</span></span></code></pre></figure>
+<ul>
+<li><strong>Set options</strong> → Adjust global document settings, such as page layout or font.</li>
+</ul>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="latex" data-theme="github-light github-dark"><code data-language="latex" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\setlength</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\parindent</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">}{0pt}  </span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">% remove paragraph indentation</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\setlength</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\parskip</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">}{1em}    </span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">% add space between paragraphs</span></span></code></pre></figure>
+<ul>
+<li><strong>Define macros</strong> → Create shortcuts for repeated commands.</li>
+</ul>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="latex" data-theme="github-light github-dark"><code data-language="latex" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">\newcommand</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\name</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">}[num]{definition}</span></span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">% - \name : new command name</span></span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">% - [num] : optional, number of arguments (1-9)</span></span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">% - definition : what the command does</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">% - Example:</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">\newcommand</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\R</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">}{</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\mathbb</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{R}}  </span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">% shortcut for the set of real numbers</span></span></code></pre></figure>
+<ul>
+<li><strong>Redefine existing commands</strong> → Modify the behavior of commands already defined by LaTeX or packages.</li>
+</ul>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="LATEX" data-theme="github-light github-dark"><code data-language="LATEX" data-theme="github-light github-dark" style="display:grid;"><span data-line> </span>
+<span data-line><span>\renewcommand{\name}[num]{new definition}</span></span>
+<span data-line><span>% - modifies an already defined command</span></span>
+<span data-line> </span>
+<span data-line><span>% - Examples:</span></span>
+<span data-line><span>\renewcommand{\thesection}{\Roman{section}} % sections numbered with Roman numerals </span></span>
+<span data-line><span>\renewcommand{\familydefault}{\sfdefault}  % change default font to sans-serif</span></span></code></pre></figure>
+<h3 id="23-the-document-metadata"><strong>2.3 the Document Metadata</strong><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#23-the-document-metadata" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>you may find this called like this or sometimes it is called topmatter or Title block or whatsoever
+it usually covers</p>
+<ul>
+<li><strong>Title</strong> → <code>\title{Document Title}</code></li>
+<li>Optional line break: <code>\title{Document Title\\A Subtitle}</code></li>
+<li><strong>Author</strong> → <code>\author{John Doe}</code></li>
+<li>Multiple authors: <code>\author{John Doe \and Jane Smith}</code></li>
+<li>With affiliations: <code>\author{John Doe\thanks{University A} \and Jane Smith\thanks{Institute B}}</code></li>
+<li><strong>Date</strong> →</li>
+<li>Today’s date: <code>\date{\today}</code></li>
+<li>Custom date: <code>\date{September 10, 2025}</code></li>
+<li>No date: <code>\date{}</code></li>
+<li><strong>Subtitle / extra info</strong> → (requires package like <code>titling</code>) <code>\subtitle{A Conceptual Cheatsheet for Students}</code></li>
+</ul>
+<h3 id="24-the-body"><strong>2.4 the Body</strong><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#24-the-body" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Full documents:</strong> always include <code>\begin{document}</code> and <code>\end{document}</code>
+so this is your playground where you include what you need to
+here is the cheatsheet that I mentioned in the beginning that have basic commands , environments and stuff like that
+<a href="https://wch.github.io/latexsheet/latexsheet.pdf" class="external">Latexsheet<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<p>we’ll discuss more concepts in body in <strong>Filling Up the body</strong> section</p>
+<h3 id="25-anything-that-follows"><strong>2.5 Anything that follows</strong><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#25-anything-that-follows" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>anything written after <code>\end{document}</code> is ignored</strong>.</p>
+<h1 id="filling-up-the-body">Filling Up the Body<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#filling-up-the-body" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<h2 id="1-maketitle-command"><strong>1. <code>\maketitle</code> Command</strong><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#1-maketitle-command" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>The <code>\maketitle</code> command renders the <strong>title block</strong> of your document (title, author, date) based on what you defined in the preamble.</p>
+<h3 id="why-not-just-use-regular-text">Why not just use regular text?<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#why-not-just-use-regular-text" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>Using <code>\maketitle</code> keeps things <strong>consistent</strong> with the document class style.</li>
+<li>It automatically formats according to academic or publishing standards.</li>
+<li>It adapts to class changes (e.g., switching from <code>article</code> to <code>report</code> or <code>book</code>).</li>
+<li>It integrates with other structures (e.g., <code>\tableofcontents</code> places the title in the right spot).</li>
+</ul>
+<h2 id="2-the-abstract"><strong>2. The Abstract</strong><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#2-the-abstract" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Defined with the <code>abstract</code> environment, used for a short summary.</p>
+<h2 id="3-tableofcontents-command"><strong>3. <code>\tableofcontents</code> Command</strong><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#3-tableofcontents-command" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Generates a table of contents from your sectioning commands.<br/>
+It updates automatically with correct formatting and page numbers.</p>
+<h2 id="4-sectioning-and-numbering"><strong>4. Sectioning and Numbering</strong><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#4-sectioning-and-numbering" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="hierarchy">Hierarchy<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#hierarchy" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><img src="../LaTex/assets/hierarchy-of-sectioning-environments.png" width="auto" height="auto" alt/>
+source <a href="https://www.andy-roberts.net/latex/document_structure/" class="external">link<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<h3 id="number-like-a-pro">Number like a pro<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#number-like-a-pro" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>LaTeX automatically numbers sections, figures, tables, and equations.</p>
+<h4 id="numbered-vs-unnumbered">Numbered vs Unnumbered<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#numbered-vs-unnumbered" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="latex" data-theme="github-light github-dark"><code data-language="latex" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">% Default: 1, 2, 3...</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\section</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">Introduction</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">}</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">% Unnumbered section</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\section*</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">Acknowledgements</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">}  </span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">% No number, doesn’t appear in TOC by default</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">% Include unnumbered section in TOC</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\section*</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">Acknowledgements</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">}</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\addcontentsline</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{toc}{section}{Acknowledgements}</span></span></code></pre></figure>
+<h4 id="customize-numbering">Customize numbering<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#customize-numbering" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="latex" data-theme="github-light github-dark"><code data-language="latex" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">% Change section numbering style</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">\renewcommand</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\thesection</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">}{</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\Roman</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{section}} </span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">% I, II, III...</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">\renewcommand</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\thesubsection</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">}{</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\thesection</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">.</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\arabic</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{subsection}} </span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">% 1.1, 1.2...</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">\renewcommand</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\thesubsubsection</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">}{</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\thesubsection</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">.</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\alph</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{subsubsection}} </span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">% 1.1.a, 1.1.b...</span></span>
+<span data-line> </span></code></pre></figure>
+<h4 id="figures-tables-and-equations">Figures, Tables, and Equations<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#figures-tables-and-equations" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="latex" data-theme="github-light github-dark"><code data-language="latex" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">% Figures and tables include chapter number (if using report/book)</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">\renewcommand</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\thefigure</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">}{</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\thechapter</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">.</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\arabic</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{figure}}</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">\renewcommand</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\thetable</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">}{</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\thechapter</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">.</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\arabic</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{table}}</span></span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">% Equations</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">\renewcommand</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\theequation</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">}{</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\thesection</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">.</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\arabic</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{equation}}</span></span></code></pre></figure>
+<h4 id="reset-counters">Reset Counters<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#reset-counters" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="latex" data-theme="github-light github-dark"><code data-language="latex" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">% Reset manually</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\setcounter</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{figure}{0}    </span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">% Reset figure counter</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\setcounter</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{table}{0}     </span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">% Reset table counter</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\setcounter</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{equation}{0}  </span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">% Reset equation counter</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\setcounter</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{section}{0}   </span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">% Reset section counter</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">% Reset automatically per higher-level counter (requires chngcntr package)</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">\usepackage</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">chngcntr</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">}</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\counterwithin</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{figure}{chapter}  </span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">% Figures reset every chapter</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\counterwithin</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{table}{chapter}   </span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">% Tables reset every chapter</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\counterwithin</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{equation}{chapter} </span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">% Equations reset every chapter</span></span></code></pre></figure>
+<h2 id="5-basic-formatting-in-latex"><strong>5. Basic Formatting in LaTeX</strong><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#5-basic-formatting-in-latex" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Category</th><th>Command / Example</th><th>Description</th></tr></thead><tbody><tr><td><strong>Text Styles</strong></td><td><code>\textbf{Bold}</code><br/><code>\textit{Italic}</code><br/><code>\underline{Underline}</code><br/><code>\emph{Emphasis}</code></td><td>Bold, italic, underline, emphasis</td></tr><tr><td><strong>Font Sizes</strong></td><td><code>\tiny</code>, <code>\scriptsize</code>, <code>\footnotesize</code>, <code>\small</code>, <code>\normalsize</code>, <code>\large</code>, <code>\Large</code>, <code>\LARGE</code>, <code>\huge</code>, <code>\Huge</code></td><td>Different font sizes</td></tr><tr><td><strong>Alignment</strong></td><td><code>\begin{center}...\end{center}</code><br/><code>\begin{flushleft}...\end{flushleft}</code><br/><code>\begin{flushright}...\end{flushright}</code></td><td>Center, left, right alignment</td></tr><tr><td><strong>Lists</strong></td><td><code>\begin{itemize}...\end{itemize}</code><br/><code>\begin{enumerate}...\end{enumerate}</code></td><td>Bulleted and numbered lists</td></tr><tr><td><strong>Spacing</strong></td><td><code>\smallskip</code>, <code>\medskip</code>, <code>\bigskip</code>, <code>\vspace{1em}</code></td><td>Vertical spacing</td></tr><tr><td><strong>Line / Paragraph</strong></td><td><code>\\</code> or <code>\newline</code><br/><code>\noindent</code><br/><code>\par</code></td><td>Line break, remove indentation, new paragraph</td></tr><tr><td><strong>Local Formatting</strong></td><td><code>{\bfseries Bold only here}</code></td><td>Apply formatting locally within a group</td></tr></tbody></table></div>
+<h2 id="6-how-to-handle-figures"><strong>6. How to Handle Figures</strong><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#6-how-to-handle-figures" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="latex" data-theme="github-light github-dark"><code data-language="latex" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\begin</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{figure}[&lt;position>!]</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\centering</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> </span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\includegraphics</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">[width=0.5</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\textwidth</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">]{&lt;filepath>}</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\caption</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{Caption text}</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">\label</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">fig:</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&lt;</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">label</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">>}</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\end</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{figure}</span></span></code></pre></figure>
+<h3 id="explanation">Explanation<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#explanation" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><code>&lt;position></code> options:</li>
+<li><code>h</code> → here</li>
+<li><code>t</code> → top of page</li>
+<li><code>b</code> → bottom of page</li>
+<li><code>p</code> → page of floats</li>
+<li><code>!</code> → override internal constraints</li>
+<li><code>&lt;filepath></code> → your image file name (with or without extension)</li>
+<li><code>\centering</code> → centers the figure</li>
+<li><code>\caption{}</code> → adds a caption</li>
+<li><code>\label{}</code> → used with <code>\ref{}</code> to reference the figure in text</li>
+</ul>
+<h3 id="list-of-figures">List of figures<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#list-of-figures" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><code>\listoffigures</code>
+LaTeX automatically collects captions from all figures with <code>\caption{}</code></p>
+<h2 id="7-how-to-handle-tables"><strong>7. How to Handle Tables</strong><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#7-how-to-handle-tables" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="latex" data-theme="github-light github-dark"><code data-language="latex" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\begin</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{table}[&lt;position>!]</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\centering</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\begin</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{tabular}{|c|c|c|}</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">	\hline</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">	Header1 </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">&amp;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> Header2 </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">&amp;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> Header3 </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">\\</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">	\hline</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">	Data1 </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">&amp;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> Data2 </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">&amp;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> Data3 </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">\\</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">	\hline</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\end</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{tabular}</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\caption</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{Caption text}</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">\label</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">tab:</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&lt;</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">label</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">>}</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\end</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{table}</span></span></code></pre></figure>
+<ul>
+<li><code>&lt;position></code>: <code>h</code> here, <code>t</code> top, <code>b</code> bottom, <code>p</code> page of floats, <code>!</code> override constraints.</li>
+<li><code>\centering</code> → centers the table.</li>
+<li><code>\caption{}</code> → adds a caption.</li>
+<li><code>\label{}</code> → used with <code>\ref{tab:&lt;label>}</code> for referencing.</li>
+<li><code>\hline</code> → horizontal line.</li>
+<li><code>{|c|c|c|}</code> → column alignment: <code>c</code> center, <code>l</code> left, <code>r</code> right; <code>|</code> adds vertical lines.</li>
+</ul>
+<h3 id="list-of-tables">List of Tables<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#list-of-tables" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><code>\listoftables</code> works the same as <code>\listoffigures</code></p>
+<h2 id="8-referencing"><strong>8. Referencing</strong><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#8-referencing" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="labeling">Labeling<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#labeling" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="latex" data-theme="github-light github-dark"><code data-language="latex" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">\label</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{&lt;</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">marker</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">></span></span></code></pre></figure>
+<ul>
+<li>Place a <code>\label{}</code> <strong>inside a section, figure, table, or equation environment</strong>.</li>
+<li><code>&lt;marker></code> is a unique name you choose for referencing.
+<strong>Best Practices</strong>
+Use consistent naming: e.g., <code>fig:</code>, <code>tab:</code>, <code>sec:</code> prefixes.</li>
+</ul>
+<h3 id="referencing-by-number">Referencing by Number<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#referencing-by-number" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="latex" data-theme="github-light github-dark"><code data-language="latex" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">~</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">\ref</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{&lt;</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">marker</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">>}       </span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">% inserts the number of the labeled object</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">~</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">\pageref</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{&lt;</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">marker</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">>}   </span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">% inserts the page number where the object appears</span></span></code></pre></figure>
+<p><code>~</code> prevents a line break between text and number.</p>
+<h3 id="hyperref"><code>\hyperref</code><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#hyperref" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>for <strong>basic clickable references</strong>, you usually just need to <strong>load the <code>hyperref</code> package</strong> in your preamble:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="latex" data-theme="github-light github-dark"><code data-language="latex" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">\usepackage</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">hyperref</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">}</span></span></code></pre></figure>
+<p>for a custom link
+<code>\hyperref[&lt;marker>]{Text to display}</code></p>
+<h2 id="9-bibliography"><strong>9. Bibliography</strong><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#9-bibliography" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>A <strong>bibliography</strong> is a list of sources (books, articles, websites, etc.) referenced or consulted in your document. It provides proper credit and allows readers to locate the sources.</p>
+<h3 id="key-packages">Key Packages<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#key-packages" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><code>thebibliography</code> → manual entries</li>
+<li><code>biblatex</code> → modern, flexible, works with <code>biber</code></li>
+<li><code>natbib</code> → author-year or numeric citations</li>
+<li><code>cite</code> → compress numeric citations</li>
+<li><code>hyperref</code> → clickable citations in PDF</li>
+</ul>
+<h3 id="notes">Notes<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#notes" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>Use <code>\cite{}</code> to reference entries.</li>
+<li>Prefer <code>biblatex</code>/<code>natbib</code> for large projects.</li>
+</ul>
+<h1 id="handling-separate-files">Handling Separate Files<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#handling-separate-files" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<h2 id="including-files-in-each-other"><strong>Including files in each other</strong><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#including-files-in-each-other" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>the <a href="https://en.wikibooks.org/wiki/LaTeX/Modular_Documents" class="external">wikibooks<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> discusses this sparingly , but here is a quick “just enough”</p>
+<h3 id="include-vs-input"><code>\include</code> vs <code>\input</code><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#include-vs-input" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>
+<p><strong><code>\input{file}</code></strong>:</p>
+</li>
+<li>
+<p>Simply inserts the contents of <code>file.tex</code> at the location of the command.</p>
+</li>
+<li>
+<p>No extra page breaks.</p>
+</li>
+<li>
+<p>Useful for small snippets or logically splitting sections.</p>
+</li>
+<li>
+<p><strong>Supports nesting:</strong> an input file can itself <code>\input</code> other files.</p>
+</li>
+<li>
+<p><strong><code>\include{file}</code></strong>:</p>
+</li>
+<li>
+<p>Inserts the contents of <code>file.tex</code> <strong>and creates its own <code>.aux</code> file</strong>.</p>
+</li>
+<li>
+<p>Automatically adds a page break before the included file.</p>
+</li>
+<li>
+<p>Useful for large documents (chapters, appendices).</p>
+</li>
+<li>
+<p><strong>Supports nesting</strong> only at <strong>one level</strong>: included files <strong>cannot themselves include other files</strong> using <code>\include</code>. Nested inclusion must use <code>\input</code> inside the included file.</p>
+</li>
+<li>
+<p><strong><code>\includeonly{file1,file2}</code></strong>:</p>
+</li>
+<li>
+<p>Compile only the listed <code>\include</code> files while skipping the rest.</p>
+</li>
+<li>
+<p>Speeds up compilation for large projects.</p>
+</li>
+<li>
+<p><code>.aux</code> files of skipped files are still read, so references and numbering stay correct.</p>
+</li>
+<li>
+<p><strong>Other libraries / packages for including content</strong>:</p>
+</li>
+<li>
+<p><code>standalone</code>: for including separate LaTeX files, figures, or TikZ pictures as standalone content.</p>
+</li>
+<li>
+<p><code>subfiles</code>: allows each subfile to be compiled independently <strong>and</strong> as part of the main document, supporting fully nested documents.</p>
+</li>
+</ul>
+<h3 id="how-does-latex-put-things-together-later">How Does LaTeX Put Things Together Later?<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#how-does-latex-put-things-together-later" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>During compilation, LaTeX <strong>reads the main file</strong> and recursively pulls in <code>\input</code>/<code>\include</code> files.</li>
+<li><code>\include</code> creates separate <code>.aux</code> files to track counters, labels, and references per file.</li>
+<li>The final output is a single PDF, with all included content assembled according to the order in the main file.</li>
+<li><code>\includeonly</code> lets you <strong>skip compilation of certain parts</strong> while keeping global references intact.</li>
+</ul>
+<h2 id="a-recommended-structure"><strong>A recommended Structure</strong><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#a-recommended-structure" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h2 id="a-recommended-structure-1"><strong>A Recommended Structure</strong><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#a-recommended-structure-1" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li>Keep a <strong>main file</strong> (<code>main.tex</code>) that defines the preamble, title, and global settings.</li>
+<li>Split chapters or sections into separate files in a <code>chapters/</code> folder or similar.</li>
+<li>Optional: use a <code>figures/</code> folder for images, <code>tables/</code> for tables, <code>bibliography/</code> for <code>.bib</code> files.</li>
+<li>Example structure:</li>
+</ul>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="shell" data-theme="github-light github-dark"><code data-language="shell" data-theme="github-light github-dark" style="display:grid;"><span data-line> </span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">project/</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  </span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">│──</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> main.tex</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  </span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">│──</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> chapters/</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  </span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">│</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> ├──</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> intro.tex</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  </span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">│</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> ├──</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> chapter1.tex</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  </span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">│</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> └──</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> chapter2.tex</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  </span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">│──</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> figures/</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  </span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">│──</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> tables/</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  </span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">│──</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> bibliography.bib</span></span></code></pre></figure>
+<h1 id="youre-good-to-go">You’re good to go!<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#youre-good-to-go" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>remember that this is only an introduction , as you practice more and search you can always improve your knowledge base and improve your work
+By now I guess you have enough to write new documents and manipulate existing ones , intentionally without heavy reliance on LLMs and similar tools.</p>
+<p><em>As you may have noticed, I didn’t cover in this page one of the most widespread usages of LaTex , which is writing mathematical formulae  , as it will be covered in a dedicated page.</em></p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" class="toc-header" aria-controls="toc-2" aria-expanded="true"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-1" class="toc-content overflow"><li class="depth-0"><a href="#generic-syntax-of-latex-and-glossary" data-for="generic-syntax-of-latex-and-glossary">Generic syntax of LaTex and Glossary</a></li><li class="depth-1"><a href="#1-basic-syntax-principles" data-for="1-basic-syntax-principles">1. Basic Syntax Principles</a></li><li class="depth-2"><a href="#11-commands" data-for="11-commands">1.1 Commands</a></li><li class="depth-2"><a href="#12-environments" data-for="12-environments">1.2 Environments</a></li><li class="depth-2"><a href="#13-comments" data-for="13-comments">1.3 Comments</a></li><li class="depth-2"><a href="#14-groups-and-scopes" data-for="14-groups-and-scopes">1.4 Groups and Scopes</a></li><li class="depth-2"><a href="#15-special-characters" data-for="15-special-characters">1.5 Special Characters</a></li><li class="depth-1"><a href="#2-global-document-structure" data-for="2-global-document-structure">2. Global document structure</a></li><li class="depth-2"><a href="#21-the-document-class" data-for="21-the-document-class">2.1 the Document class</a></li><li class="depth-2"><a href="#22-the-preamble" data-for="22-the-preamble">2.2 the preamble</a></li><li class="depth-2"><a href="#23-the-document-metadata" data-for="23-the-document-metadata">2.3 the Document Metadata</a></li><li class="depth-2"><a href="#24-the-body" data-for="24-the-body">2.4 the Body</a></li><li class="depth-2"><a href="#25-anything-that-follows" data-for="25-anything-that-follows">2.5 Anything that follows</a></li><li class="depth-0"><a href="#filling-up-the-body" data-for="filling-up-the-body">Filling Up the Body</a></li><li class="depth-1"><a href="#1-maketitle-command" data-for="1-maketitle-command">1. \maketitle Command</a></li><li class="depth-2"><a href="#why-not-just-use-regular-text" data-for="why-not-just-use-regular-text">Why not just use regular text?</a></li><li class="depth-1"><a href="#2-the-abstract" data-for="2-the-abstract">2. The Abstract</a></li><li class="depth-1"><a href="#3-tableofcontents-command" data-for="3-tableofcontents-command">3. \tableofcontents Command</a></li><li class="depth-1"><a href="#4-sectioning-and-numbering" data-for="4-sectioning-and-numbering">4. Sectioning and Numbering</a></li><li class="depth-2"><a href="#hierarchy" data-for="hierarchy">Hierarchy</a></li><li class="depth-2"><a href="#number-like-a-pro" data-for="number-like-a-pro">Number like a pro</a></li><li class="depth-1"><a href="#5-basic-formatting-in-latex" data-for="5-basic-formatting-in-latex">5. Basic Formatting in LaTeX</a></li><li class="depth-1"><a href="#6-how-to-handle-figures" data-for="6-how-to-handle-figures">6. How to Handle Figures</a></li><li class="depth-2"><a href="#explanation" data-for="explanation">Explanation</a></li><li class="depth-2"><a href="#list-of-figures" data-for="list-of-figures">List of figures</a></li><li class="depth-1"><a href="#7-how-to-handle-tables" data-for="7-how-to-handle-tables">7. How to Handle Tables</a></li><li class="depth-2"><a href="#list-of-tables" data-for="list-of-tables">List of Tables</a></li><li class="depth-1"><a href="#8-referencing" data-for="8-referencing">8. Referencing</a></li><li class="depth-2"><a href="#labeling" data-for="labeling">Labeling</a></li><li class="depth-2"><a href="#referencing-by-number" data-for="referencing-by-number">Referencing by Number</a></li><li class="depth-2"><a href="#hyperref" data-for="hyperref">\hyperref</a></li><li class="depth-1"><a href="#9-bibliography" data-for="9-bibliography">9. Bibliography</a></li><li class="depth-2"><a href="#key-packages" data-for="key-packages">Key Packages</a></li><li class="depth-2"><a href="#notes" data-for="notes">Notes</a></li><li class="depth-0"><a href="#handling-separate-files" data-for="handling-separate-files">Handling Separate Files</a></li><li class="depth-1"><a href="#including-files-in-each-other" data-for="including-files-in-each-other">Including files in each other</a></li><li class="depth-2"><a href="#include-vs-input" data-for="include-vs-input">\include vs \input</a></li><li class="depth-2"><a href="#how-does-latex-put-things-together-later" data-for="how-does-latex-put-things-together-later">How Does LaTeX Put Things Together Later?</a></li><li class="depth-1"><a href="#a-recommended-structure" data-for="a-recommended-structure">A recommended Structure</a></li><li class="depth-1"><a href="#a-recommended-structure-1" data-for="a-recommended-structure-1">A Recommended Structure</a></li><li class="depth-0"><a href="#youre-good-to-go" data-for="youre-good-to-go">You’re good to go!</a></li><li class="overflow-end"></li></ul></div><div class="backlinks"><h3>Backlinks</h3><ul id="list-2" class="overflow"><li><a href="../LaTex/Latex-summary" class="internal">Latex summary</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.5.2</a> © 2026</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript" data-persist="true">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
+</script><script type="module" data-persist="true">function E(a,e){if(!a)return;function t(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function n(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}a?.addEventListener("click",t),window.addCleanup(()=>a?.removeEventListener("click",t)),document.addEventListener("keydown",n),window.addCleanup(()=>document.removeEventListener("keydown",n))}function f(a){for(;a.firstChild;)a.removeChild(a.firstChild)}var m=class{constructor(e,t){this.container=e;this.content=t;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),t=this.onMouseMove.bind(this),n=this.onMouseUp.bind(this),o=this.onTouchStart.bind(this),r=this.onTouchMove.bind(this),i=this.onTouchEnd.bind(this),s=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",t),document.addEventListener("mouseup",n),this.container.addEventListener("touchstart",o,{passive:!1}),document.addEventListener("touchmove",r,{passive:!1}),document.addEventListener("touchend",i),window.addEventListener("resize",s),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",t),()=>document.removeEventListener("mouseup",n),()=>this.container.removeEventListener("touchstart",o),()=>document.removeEventListener("touchmove",r),()=>document.removeEventListener("touchend",i),()=>window.removeEventListener("resize",s))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let t=this.createButton("+",()=>this.zoom(.1)),n=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(n),e.appendChild(o),e.appendChild(t),this.container.appendChild(e)}createButton(e,t){let n=document.createElement("button");return n.textContent=e,n.className="mermaid-control-button",n.addEventListener("click",t),window.addCleanup(()=>n.removeEventListener("click",t)),n}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}onTouchStart(e){if(e.touches.length!==1)return;this.isDragging=!0;let t=e.touches[0];this.startPan={x:t.clientX-this.currentPan.x,y:t.clientY-this.currentPan.y}}onTouchMove(e){if(!this.isDragging||e.touches.length!==1)return;e.preventDefault();let t=e.touches[0];this.currentPan={x:t.clientX-this.startPan.x,y:t.clientY-this.startPan.y},this.updateTransform()}onTouchEnd(){this.isDragging=!1}zoom(e){let t=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),n=this.content.getBoundingClientRect(),o=n.width/2,r=n.height/2,i=t-this.scale;this.currentPan.x-=o*i,this.currentPan.y-=r*i,this.scale=t,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){let t=this.content.querySelector("svg").getBoundingClientRect(),n=t.width/this.scale,o=t.height/this.scale;this.scale=1,this.currentPan={x:(this.container.clientWidth-n)/2,y:(this.container.clientHeight-o)/2},this.updateTransform()}},T=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],y;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;y||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let t=y.default,n=new WeakMap;for(let r of e)n.set(r,r.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let c=n.get(s);c&&(s.innerHTML=c)}let r=T.reduce((s,c)=>(s[c]=window.getComputedStyle(document.documentElement).getPropertyValue(c),s),{}),i=document.documentElement.getAttribute("saved-theme")==="dark";t.initialize({startOnLoad:!1,securityLevel:"loose",theme:i?"dark":"base",themeVariables:{fontFamily:r["--codeFont"],primaryColor:r["--light"],primaryTextColor:r["--darkgray"],primaryBorderColor:r["--tertiary"],lineColor:r["--darkgray"],secondaryColor:r["--secondary"],tertiaryColor:r["--tertiary"],clusterBkg:r["--light"],edgeLabelBackground:r["--highlight"]}}),await t.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let r=0;r<e.length;r++){let v=function(){let g=l.querySelector("#mermaid-space"),h=l.querySelector(".mermaid-content");if(!h)return;f(h);let w=i.querySelector("svg").cloneNode(!0);h.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new m(g,h)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},i=e[r],s=i.parentElement,c=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(c),L=c.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),E(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../postscript.js" type="module" data-persist="true"></script></html>

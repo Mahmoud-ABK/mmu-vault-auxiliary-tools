@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+      <title>Quartz 4</title>
+      <link>https://quartz.jzhao.xyz</link>
+      <description>Last 10 notes on Quartz 4</description>
+      <generator>Quartz -- quartz.jzhao.xyz</generator>
+      <item>
+    <title>Introduction</title>
+    <link>https://quartz.jzhao.xyz/Introduction</link>
+    <guid>https://quartz.jzhao.xyz/Introduction</guid>
+    <description><![CDATA[ Auxiliary Tools for an engineer Welcome to Auxiliary Tools for an engineer, your central hub for all supporting utilities, workflows, and productivity boosters. ]]></description>
+    <pubDate>Sat, 16 May 2026 21:23:53 GMT</pubDate>
+  </item><item>
+    <title>Ecosystem</title>
+    <link>https://quartz.jzhao.xyz/LaTex/Ecosystem</link>
+    <guid>https://quartz.jzhao.xyz/LaTex/Ecosystem</guid>
+    <description><![CDATA[ An overview of the ecosystem, terminology, and fundamental ideas. ]]></description>
+    <pubDate>Sat, 16 May 2026 21:23:53 GMT</pubDate>
+  </item><item>
+    <title>Latex for Writing</title>
+    <link>https://quartz.jzhao.xyz/LaTex/Latex-for-Writing</link>
+    <guid>https://quartz.jzhao.xyz/LaTex/Latex-for-Writing</guid>
+    <description><![CDATA[ If you’re a student , I am assuming that you’re using latex to write your reports so in this page we going to guide you to effectively manipulate and write in latex smoothly to quickly start your documenting journey This is more of a conceptual cheatsheet : where we introduce a concept in LaTex and ... ]]></description>
+    <pubDate>Sat, 16 May 2026 21:23:53 GMT</pubDate>
+  </item><item>
+    <title>Latex summary</title>
+    <link>https://quartz.jzhao.xyz/LaTex/Latex-summary</link>
+    <guid>https://quartz.jzhao.xyz/LaTex/Latex-summary</guid>
+    <description><![CDATA[ well, this won’t be a comprehensive thing , it is just a small intro to get started more like syntax oriented , good to know for proper debugging [! a small note] it is written tex and latex but it is pronounced “tec”/“latec” or with a “k” or whatever Some theory maybe? worth it Key Concepts and Eco... ]]></description>
+    <pubDate>Sat, 16 May 2026 21:23:53 GMT</pubDate>
+  </item><item>
+    <title>index</title>
+    <link>https://quartz.jzhao.xyz/</link>
+    <guid>https://quartz.jzhao.xyz/</guid>
+    <description><![CDATA[ AuxiliaryTools Vault Card Domain: Tooling Version: v.1* Status: published Supporting tools and workflows vault for engineering productivity, currently featuring LaTeX for professional document preparation with planned expansion to version control and other utility guides. ]]></description>
+    <pubDate>Thu, 02 Oct 2025 23:00:00 GMT</pubDate>
+  </item>
+    </channel>
+  </rss>
