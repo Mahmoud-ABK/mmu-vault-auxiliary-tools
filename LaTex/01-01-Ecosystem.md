@@ -65,7 +65,7 @@ popular packages and extensions
     - **hyperref** – Hyperlinks and bookmarks.
 
 
-[[Latex summary |Summary Page]]
+[[01-00-Latex summary|Summary Page]]
 
 ---
 # Sources:

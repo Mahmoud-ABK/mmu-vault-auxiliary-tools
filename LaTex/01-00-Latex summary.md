@@ -5,9 +5,9 @@ well, this won't be a comprehensive thing , it is just a small intro to get star
 > it is written tex and latex but it is pronounced "tec"/"latec" or with a "k" or whatever 
 
 # Some theory maybe? worth it 
-[[LaTex/Ecosystem|Key Concepts and Ecosystem of LaTex]]
+[[01-01-Ecosystem|Key Concepts and Ecosystem of LaTex]]
 # Syntax
-[[LaTex/Latex for Writing|Latex for Writing]]
+[[01-02-Latex for Writing|1-2-Latex for Writing]]
 [[LaTex/Latex for Mathematics|Latex for Mathematics : in progress]]
 
 

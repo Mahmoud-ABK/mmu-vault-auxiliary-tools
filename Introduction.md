@@ -8,7 +8,7 @@ This vault is dedicated to collecting tools, tips, templates, and practical reso
 
 ## What’s in this vault
 
-- [[Latex summary|LaTeX]] – Summaries, templates, and tips for professional document preparation.  
+- [[01-00-Latex summary|LaTeX]] – Summaries, templates, and tips for professional document preparation.  
 ## Upcoming
 - Version Control  – Guides, workflows, and best practices for managing code and collaboration. 
 
