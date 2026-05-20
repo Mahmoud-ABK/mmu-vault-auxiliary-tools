@@ -3,9 +3,9 @@ vault_name: AuxiliaryTools
 domain: Tooling
 version: v.1*
 status: published
-parent_vault: null
+parent_vault:
 github_repo: mmu-vault-AuxiliaryTools
-hosted_url: null
+hosted_url: https://mahmoud-abk.github.io/mmu-vault-auxiliary-tools/introduction.html
 created: 2025-10-03
 ---
 
@@ -37,4 +37,4 @@ Mature; locally modified since last publish (`v.1*`). LaTeX is the primary conte
 ## Links
 
 - **GitHub:** https://github.com/Mahmoud-ABK/mmu-vault-AuxiliaryTools
-- **Published:** —
+- **Published:** https://mahmoud-abk.github.io/mmu-vault-auxiliary-tools/introduction.html
